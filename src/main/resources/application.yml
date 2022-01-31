@@ -1,0 +1,21 @@
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: ${DB_URL:jdbc:h2:mem:develop;MODE=Mysql;DB_CLOSE_ON_EXIT=TRUE}
+    username: ${DB_USER_NAME:sa}
+    password: ${DB_USER_PASSWORD:}
+    hikari:
+      maximum-pool-size: 20
+      leak-detection-threshold: 30000
+    driver-class-name: org.h2.Driver
+management:
+  endpoint:
+    mappings:
+      enabled: true
+
+mybatis:
+  configuration:
+    useColumnLabel: true
+    mapUnderscoreToCamelCase: true
